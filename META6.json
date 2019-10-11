@@ -1,0 +1,15 @@
+{
+    "perl"          : "6",
+    "name"          : "Smooth::Numbers",
+    "version"       : "0.0.1",
+    "description"   : "Given a list of factors, return a smooth number iterator",
+    "authors"       : [ "Steve Schulze (thundergnat)" ],
+    "provides"      : { "Smooth::Numbers" : "lib/Smooth/Numbers.pm6" },
+    "depends"       : [ ],
+    "build-depends" : [ ],
+    "test-depends"  : [ "Test" ],
+    "source-type"   : "git",
+    "source-url"    : "git://github.com/thundergnat/smooth-numbers.git",
+    "license"       : "Artistic-2.0",
+    "tags"          : [ "Smooth numbers", "Pierpont", "Hamming", "Humble" ]
+}
