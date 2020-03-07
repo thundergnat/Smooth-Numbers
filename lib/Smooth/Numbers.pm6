@@ -16,10 +16,12 @@ sub smooth-numbers (*@list where @list.all >= 1 ) is export {
 =head1 NAME
 Smooth::Numbers
 
-Given a list of prime factors, return an iterator which will produce numbers
-that are "smooth" to those factors.
+[![Build Status](https://travis-ci.org/thundergnat/Smooth-Numbers.svg?branch=master)](https://travis-ci.org/thundergnat/Smooth-Numbers)
 
 =head1 SYNOPSIS
+
+Given a list of prime factors, return an iterator which will produce numbers
+that are "smooth" to those factors.
 
 =begin code
 
@@ -63,13 +65,12 @@ Exports a single subroutine:
 sub smooth-numbers(*@factors)
 =end code
 
-Takes a list or array of prime factors and returns an iterator that generates an
+Takes a list or array of factors and returns an iterator that generates an
 ordered sequence of numbers that are smooth to those factors.
 
-The factors need not be in any order, and need not necessarily be prime. Smooth
-numbers traditionally are thought of as products of only prime factors, but if
-you want, for instance, the products of powers of 4 and 9, this module will
-oblige.
+The factors need not be in any order, and need not be prime. Smooth numbers
+traditionally are thought of as products of only prime factors, but if you want,
+for instance, the products of powers of 4 and 9, this module will oblige.
 
 =begin code
 put smooth-numbers(4,9)[^15];
