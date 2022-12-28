@@ -18,12 +18,12 @@
   ],
   "source-url": "git://github.com/thundergnat/smooth-numbers.git",
   "tags": [
-  ],
-  "test-depends": [
     "Smooth numbers",
     "Pierpont numbers",
     "Hamming numbers",
     "Humble numbers"
+  ],
+  "test-depends": [
   ],
   "version": "0.0.3"
 }
