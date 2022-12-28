@@ -1,0 +1,9 @@
+Revision history for Smooth-Numbers
+
+{{$NEXT}}
+    - Migrate to fez ecosystem
+
+
+0.0.2 - Added CI testing and badge
+
+0.0.1 - Initial version

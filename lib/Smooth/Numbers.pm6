@@ -1,3 +1,5 @@
+unit module Smooth::Numbers:ver<0.0.3>:auth<zef:thundergnat>;
+
 sub smooth-numbers (*@list where @list.all >= 1 ) is export {
     fail "Need to supply at least one factor to routine" unless @list.elems > 0;
     my \Smooth := gather {
@@ -16,20 +18,19 @@ sub smooth-numbers (*@list where @list.all >= 1 ) is export {
 =head1 NAME
 Smooth::Numbers
 
-[![Build Status](https://travis-ci.org/thundergnat/Smooth-Numbers.svg?branch=master)](https://travis-ci.org/thundergnat/Smooth-Numbers)
-
-=head1 SYNOPSIS
-
 Given a list of prime factors, return an iterator which will produce numbers
 that are "smooth" to those factors.
 
-=begin code
 
-    use Smooth::Numbers;
+=head1 SYNOPSIS
 
-    my $Hammings = smooth-numbers(2,3,5);
+=begin code :lang<raku>
 
-    put $Hammings[^20]; # 1 2 3 4 5 6 8 9 10 12 15 16 18 20 24 25 27 30 32 36
+use Smooth::Numbers;
+
+my $Hammings = smooth-numbers(2,3,5);
+
+put $Hammings[^20]; # 1 2 3 4 5 6 8 9 10 12 15 16 18 20 24 25 27 30 32 36
 
 =end code
 
@@ -43,17 +44,19 @@ classic example.
 
 The first ten Hamming numbers ( 2,3,5 smooth numbers ) are:
 
-=begin code
-    1  ( 2⁰ * 3⁰ * 5⁰ )
-    2  ( 2¹ * 3⁰ * 5⁰ )
-    3  ( 2⁰ * 3¹ * 5⁰ )
-    4  ( 2² * 3⁰ * 5⁰ )
-    5  ( 2⁰ * 3⁰ * 5¹ )
-    6  ( 2¹ * 3¹ * 5⁰ )
-    8  ( 2³ * 3⁰ * 5⁰ )
-    9  ( 2⁰ * 3² * 5⁰ )
-    10 ( 2¹ * 3⁰ * 5¹ )
-    12 ( 2² * 3¹ * 5⁰ )
+=begin code :lang<raku>
+
+1  ( 2⁰ * 3⁰ * 5⁰ )
+2  ( 2¹ * 3⁰ * 5⁰ )
+3  ( 2⁰ * 3¹ * 5⁰ )
+4  ( 2² * 3⁰ * 5⁰ )
+5  ( 2⁰ * 3⁰ * 5¹ )
+6  ( 2¹ * 3¹ * 5⁰ )
+8  ( 2³ * 3⁰ * 5⁰ )
+9  ( 2⁰ * 3² * 5⁰ )
+10 ( 2¹ * 3⁰ * 5¹ )
+12 ( 2² * 3¹ * 5⁰ )
+
 =end code
 
 Smooth numbers are easy to conceptualize but can be challenging to generate in
@@ -61,8 +64,10 @@ order. This module provides a simple routine to overcome that.
 
 Exports a single subroutine:
 
-=begin code
+=begin code :lang<raku>
+
 sub smooth-numbers(*@factors)
+
 =end code
 
 Takes a list or array of factors and returns an iterator that generates an
@@ -72,19 +77,23 @@ The factors need not be in any order, and need not be prime. Smooth numbers
 traditionally are thought of as products of only prime factors, but if you want,
 for instance, the products of powers of 4 and 9, this module will oblige.
 
-=begin code
+=begin code :lang<raku>
+
 put smooth-numbers(4,9)[^15];
 
 # 1 4 9 16 36 64 81 144 256 324 576 729 1024 1296 2304
+
 =end code
 
 For that matter, there is no constraint that the "factors" need even be
 integers.
 
-=begin code
+=begin code :lang<raku>
+
 put smooth-numbers(1.5,2.5)[^10];
 
 # 1 1.5 2.25 2.5 3.375 3.75 5.0625 5.625 6.25 7.59375
+
 =end code
 
 There I<are> a few constraints:
